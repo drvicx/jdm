@@ -1,2 +1,2 @@
 # jdm
-Java Tutorial "Timesheet App"
+JavaEE Tutorial "Timesheet App"
