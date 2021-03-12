@@ -14,4 +14,5 @@ public class AppController
     public String index() {
         return "index";
     }
+
 }
