@@ -1,5 +1,5 @@
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Табель ОРПО | КУСЗН</title>
@@ -16,7 +16,7 @@
 </head>
 <body>
     <h3 class="headerTitle">Табель</h3>
-    <pre class="versionInfo">*version: 20210225 (04_CreateMainPage)</pre>
+    <pre class="versionInfo">*version: 20210311 (05_ModelAndView)</pre>
 
     <table height="90%" width="100%" border="1">
         <tr>
@@ -28,11 +28,17 @@
                         <li><a href="/">Табель сотрудника</a></li>
                         <li><a href="/">Табель сотрудников</a></li>
                     </ul>
+                    <p>Разное</p>
+                    <ul>
+                        <li><a href="/timesheet/user" target="_blank">Сотрудник</a></li>
+                        <li><a href="/timesheet/user/list" target="_blank">Сотрудники</a></li>
+                    </ul>
                 </div>
             </td>
 
             <td width="85%" valign="top">
                 <div>
+                    <p>Содержание блока</p>
                     <ul>
                         <li>Начальник отдела</li>
                         <li>Сотрудник1</li>

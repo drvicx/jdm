@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/ru.jdm.timesheet/src/main/webapp/WEB-INF/pages/index.jsp" value="file://$PROJECT_DIR$/ru.jdm.timesheet/src/main/webapp/WEB-INF/pages" />
+        <entry key="file://$PROJECT_DIR$/ru.jdm.timesheet/src/main/webapp/WEB-INF/pages/user/form.jsp" value="file://$PROJECT_DIR$/ru.jdm.timesheet/src/main/webapp/WEB-INF/pages/user" />
         <entry key="file://$PROJECT_DIR$/ru.jdm.timesheet/src/main/webapp/WEB-INF/pages/user/list.jsp" value="file://$PROJECT_DIR$/ru.jdm.timesheet/src/main/webapp/WEB-INF/pages/user" />
       </map>
     </option>
