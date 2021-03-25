@@ -1,0 +1,25 @@
+### Intellij IDEA ###
+**.idea/**
+.idea/
+.idea/artifacts
+.idea/libraries
+.idea/compiler.xml
+.idea/modules.xml
+*.iml
+*.iws
+
+### Maven ###
+log/
+target/
+
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+
+### Other Files ###
+*.log
+*.rar
+*.zip
+*.tar.gz
