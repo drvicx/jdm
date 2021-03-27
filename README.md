@@ -6,6 +6,19 @@ JavaEE Tutorial "Timesheet App"<hr/>
 *сначала самые новые; <br/>
 <hr/>
 
+06: 20210318: Connect DB
+- устанавливаем СУБД HSQLDB (HyperSQL DataBase);
+- создаем БД и подключаемся к ней с помощью GUI-инструмента;
+- создаем в БД необходимые таблицы "USER" и "TIMEDATA";
+- заполняем таблицы данными с помощью GUI-инструмента;
+- добавляем необходимые зависимости в pom.xml;
+- создаем конфигурацию подключения к БД в "persistence.xml";
+- создаем конфигурацию JPA в "JpaConfig.java;
+- вносим изменения в Модель: создаем Интерфейс "UserRepository.java";
+- вносим изменения в Контроллер: добавляем связь с данными в Модели (в БД);
+- вносим изменения в Вид: "user/form.jsp", "user/list.jsp", "index.jsp";
+<hr/>  
+
 05: 20210311: Model and View
 - создана Модель: класс "User" и тестовые данные;
 - создан Вид: созданы разделы "/user" и "/user/list";
@@ -47,3 +60,4 @@ JavaEE Tutorial "Timesheet App"<hr/>
 - Git клиент для Windows 2.28.0.windows.1
 - Apache Maven 3.6.3
 - Apache Tomcat 9.0.43
+- In-Memory Java СУБД HSQLDB (HyperSQL DataBase)
