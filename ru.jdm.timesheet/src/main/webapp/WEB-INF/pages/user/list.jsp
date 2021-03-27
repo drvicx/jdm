@@ -10,7 +10,7 @@
 <ul>
     <c:if test="${not empty users}">
         <c:forEach items="${users}" var="user">
-            <li>${user.surname} ${user.name}</li>
+            <li>${user.name} ${user.surname}</li>
         </c:forEach>
     </c:if>
 </ul>

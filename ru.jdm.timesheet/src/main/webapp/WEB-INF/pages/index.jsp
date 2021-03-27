@@ -16,7 +16,7 @@
 </head>
 <body>
     <h3 class="headerTitle">Табель</h3>
-    <pre class="versionInfo">*version: 20210311 (05_ModelAndView)</pre>
+    <pre class="versionInfo">*version: 20210318 (06_ConnectDB)</pre>
 
     <table height="90%" width="100%" border="1">
         <tr>
@@ -30,7 +30,6 @@
                     </ul>
                     <p>Разное</p>
                     <ul>
-                        <li><a href="/timesheet/user" target="_blank">Сотрудник</a></li>
                         <li><a href="/timesheet/user/list" target="_blank">Сотрудники</a></li>
                     </ul>
                 </div>
@@ -40,9 +39,12 @@
                 <div>
                     <p>Содержание блока</p>
                     <ul>
-                        <li>Начальник отдела</li>
-                        <li>Сотрудник1</li>
-                        <li>Сотрудник2</li>
+                        <li><a href="/timesheet/user?userId=0" target="_blank">Начальник Отдела</a></li>
+                        <li><a href="/timesheet/user?userId=1" target="_blank">Секретарь</a></li>
+                        <li><a href="/timesheet/user?userId=2" target="_blank">Безопасник</a></li>
+                        <li><a href="/timesheet/user?userId=3" target="_blank">Кадровик</a></li>
+                        <li><a href="/timesheet/user?userId=4" target="_blank">Рабочий1</a></li>
+                        <li><a href="/timesheet/user?userId=5" target="_blank">Рабочий2</a></li>
                     </ul>
                 </div>
             </td>
