@@ -1,0 +1,122 @@
+/**
+ *=НЕРАБОТАЮЩИЙ КОД
+*/
+package ru.jdm.timesheet;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import ru.jdm.timesheet.entity.TimeData;
+import ru.jdm.timesheet.entity.TimeDataType;
+import ru.jdm.timesheet.entity.User;
+import ru.jdm.timesheet.repository.TimeDataRepository;
+
+import java.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.validation.BindingResult;
+
+import java.util.Collection;
+import java.util.LinkedList;
+
+
+/**
+ * Time data operations Controller
+ */
+@Controller
+@RequestMapping("/timedata")
+public class TimeDataController {
+
+    @Autowired
+    TimeDataRepository timeDataRepository;
+
+    //--список TimeData за весь месяц для 1 Сотрудника по его Id
+    /*
+    @RequestMapping("/timedata/user")
+    public ModelAndView user(@RequestParam(value = "id", required = true) Long id) {
+
+        //Collection<TimeData> timeData = (Collection<TimeData>) timeDataRepository.findByUserId(userId);
+        //!Метод findByUserId(userId) нужно предварительно задекларировать в Интерфейсе timeDataRepository;
+        //--тут была ошибка, т.к в таблице TIMEDATA уже были добавлены новые записи для каждого пользователя
+        //  и если выбирать по userId то возвращался множественный результат изза чего была ошибка
+
+
+        //Collection<TimeData> timeData = (Collection<TimeData>) timeDataRepository.findAll();
+        //Collection<TimeData> timeData = (Collection<TimeData>) timeDataRepository.findTDById(id);
+
+        //--это не работает..
+        //Collection<TimeData> timeData = (Collection<TimeData>) timeDataRepository.findById(id);
+
+        //--это не работает..
+        //--нам нужно возвращать 1 запись а не коллекцию записей
+        Optional<TimeData> timeData = timeDataRepository.findById(id);
+
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("timeData", timeData);
+        mv.setViewName("timedata/userMonthData");
+
+        return mv;
+    }
+    */
+
+    //--ПРИВОДИЛО К ОШИБКЕ ПРИ ПЕРЕХОДЕ В РАЗДЕЛ
+    //@RequestMapping("/timedata/user")
+    //public ModelAndView user(@RequestParam(value = "userId", required = true) Long userId) {
+    //      ..
+    //      Collection<TimeData> timeData = (Collection<TimeData>) timeDataRepository.findByUserId(userId);
+    //      ..
+    // }
+
+
+    //--все Временные данные по всем Сотрудникам: НЕ ДОДЕЛАНО
+    /*
+    @RequestMapping("/timedata/userList")
+    public ModelAndView users() {
+
+        //Collection<TimeData> timeData = (Collection<TimeData>) timeDataRepository.findAll();
+        Collection<TimeData> timeData = (Collection<TimeData>) timeDataRepository.findByUserId(userId);
+        //!Метод ByUserId(userId) нужно предварительно задекларировать в Интерфейсе timeDataRepository;
+
+
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("timeData", timeData);
+        mv.setViewName("timedata/list");
+
+        return mv;
+    }
+    */
+
+    //=2021.04.15 10:00
+    // НЕ РАБОТАЕТ: HTTP-ERROR: Bad Request
+    /*
+    @PostMapping(value = "/save")
+    public ModelAndView saveUser(@ModelAttribute("timeData") TimeData timeData) {
+
+        // вывод в лог томката: не работает
+        //System.out.println("timedata= " + timeData);
+
+        timeDataRepository.save(timeData);
+
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("timeData", timeData);
+        mv.setViewName("timedata/form");
+
+        return mv;
+    }
+    */
+
+    //=А ТАК РАБОТАЕТ
+    // - возможно BindingResult перехватывает HTTP-ответ и подавляет ошибку
+    // - есть предположение что ошибка из-за поля с датой
+    @PostMapping("/save")
+    public ModelAndView save(@ModelAttribute("timeData") TimeData timeData, BindingResult bindingResult) {
+        timeDataRepository.save(timeData);
+
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("timeData", timeData);
+        mv.setViewName("timedata/form");
+
+        return mv;
+    }
+
+}

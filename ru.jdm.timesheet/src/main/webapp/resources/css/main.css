@@ -1,0 +1,148 @@
+/**
+*=СТИЛИ ДЛЯ ВИДОВ
+**/
+
+/*-- ГЛОБАЛЬНЫЕ СТИЛИ --*/
+/* Включаем отображение границ элеменов глобально и для отдельного класса или группы элементов*/
+/*
+* { border: 1px solid red; }
+.debugBorders { border: 1px solid red; }
+body pre { border: 1px solid red; }
+ */
+
+/*-- стили ссылок для всех --*/
+a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:focus, a:hover {
+    border-bottom: 1px solid;
+}
+
+a:active {
+    color: red;
+}
+
+
+/*-- index.jsp --*/
+.headerTitle { margin-bottom: 0; padding-bottom: 0; }
+.versionInfo { margin-top: 0; padding-top: 0; color: #7f7f7f; }
+
+/*table.fixed { table-layout:fixed; color: red; border-color: #00CC00; }*/      /*----color*/
+/*table.fixed { table-layout:fixed; color: red; border-color: #C2C2C2; }*/      /*----КАКИУ ФУТЕРА!*/
+table.fixed { table-layout:fixed; border-color: #C2C2C2; }
+
+table.fixed td { overflow: hidden; }
+
+
+/*-- formUserListEdit.jsp --*/
+.userListTable {
+    border: 1px solid #bfbfbf;
+    padding: 5px;
+    margin-top: 10px;
+}
+.userListTable th, td {
+    border: 0 solid red;
+    padding: 3px 10px 3px 3px;
+    text-align: left;
+}
+.userListTable th {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+
+/*-- formUserNew.jsp --*/
+.form-style-2 {
+    max-width: 500px;
+    padding: 20px 12px 10px 20px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+.form-style-2-heading {
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 15px;
+    padding-bottom: 3px;
+    color: #333;
+}
+.form-style-2 label {
+    display: block;
+    margin: 0 0 15px 0;
+}
+.form-style-2 label > span {
+    width: 100px;
+    font-weight: bold;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+    color: #555;
+}
+.form-style-2 input.input-field, .form-style-2 {
+    width: 48%;
+}
+.form-style-2 input.input-field {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    -moz-box-shadow: 1px 1px 4px #EBEBEB;
+    -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 7px;
+    outline: none;
+}
+.form-style-2 .input-field:focus {
+    border: 1px solid #0C0;
+}
+
+.button {
+    background-color: white;
+    color: black;
+    border: 1px solid #555;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #555;
+    color: white;
+}
+
+.footer_centered {
+    /*border: 1px solid green;*/                /*DEBUG*/
+    /*color: red;*/                             /*DEBUG*/
+    text-align: center;
+    border-top: 1px solid #C2C2C2;
+    /*border-bottom: 1px solid #C2C2C2;*/       /*это дочерняя граница! Нужна Родительская */
+}
+
+.menuLeft {
+    /*border: 2px solid red;*/
+    border-right: 1px solid #C2C2C2;
+}
+
+.grayText {
+    color: #7f7f7f;
+}
+
+.blueText {
+    color: #0000ff;
+}
+
