@@ -6,18 +6,52 @@ JavaEE Tutorial "Timesheet App"<hr/>
 *сначала самые новые; <br/>
 <hr/>
 
+08: 20210513: HSQLDB data
+- добавлен каталог с установленной HSQLDB 2.5.1 содержащий файлы базы данных проекта;
+- далее будет произведен переход на микро-сервисную архитектуру в проекте "Timesheet 2.0";<br>
+этот проект "Timesheet" (на архитектуре SpringMVC) возможно будет дорабатываться далее, как более простой;
+
+08: 20210512: Update Data
+- реализован функционал Изменения, Добавления, Удаления данных для Сущностей "User" и "Timedata";
+- логика отображения разбита на формы ТолькоЧтение и Редактирование;  
+- обновлены Контроллеры:<br>
+  UserController.java, TimeDataController.java
+- добавлены Виды:<br>
+  formUserListView.jsp, formUserListEdit.jsp, formUserView.jsp, formUserEdit.jsp, formUserNew.jsp,<br>
+  formTDataListView.jsp, formTDataListEdit.jsp, formTDataView.jsp, formTDataEdit.jsp, formTDataNew.jsp<br>
+- добавлены CSS-стили к JSP-страницам;
+- обновлено веб-приложение на прерываемой виртуальной машине Yandex.Cloud:<br>
+  https://dotspace.ru/ <br>
+  http://dotspace.ru:8080/timesheet/ <br>
+<hr/>
+
+07: 20210325: Timedata Implementation
+- с помощью GUI-инструмента в БД создана и заполнена таблица "TIMEDATA";
+- создан Энумератор "TimeDataType.java" для хранения кодов учета времени;
+- создан JPA Класс "TimeData.java" для связи с таблицей TIMEDATA;
+- создана Модель "TimeDataRepository.java" для выборки данных из БД;
+- создан Контроллер "TimeDataController.java" обрабатывающий параметры GET-запроса для извлечения Данных;
+- создан Вид "/timedata/form.jsp" (информация об 1 учетном дне сотрудника в табеле);
+- внесены изменения в Вид "index.jsp": добавлены новые элементы в Меню: <br/>
+--"Табель Сотрудника #1"<br/>
+http://localhost:8080/timesheet/timedata?userId=1&date=2021-03-01 <br/>
+--"Табель Сотрудника #2"<br/>
+http://localhost:8080/timesheet/timedata?userId=2&date=2021-03-01
+<hr/>
+
 06: 20210318: Connect DB
-- устанавливаем СУБД HSQLDB (HyperSQL DataBase);
-- создаем БД и подключаемся к ней с помощью GUI-инструмента;
-- создаем в БД необходимые таблицы "USER" и "TIMEDATA";
-- заполняем таблицы данными с помощью GUI-инструмента;
-- добавляем необходимые зависимости в pom.xml;
-- создаем конфигурацию подключения к БД в "persistence.xml";
-- создаем конфигурацию JPA в "JpaConfig.java;
-- вносим изменения в Модель: создаем Интерфейс "UserRepository.java";
-- вносим изменения в Контроллер: добавляем связь с данными в Модели (в БД);
-- вносим изменения в Вид: "user/form.jsp", "user/list.jsp", "index.jsp";
-<hr/>  
+- установлена СУБД HSQLDB (HyperSQL DataBase);
+- создан скрипт "HSQL_start.bat" запускающий СУБД;
+- создан скрипт "HSQL_stop.bat" безопасно останавливающий СУБД;
+- с помощью GUI-инструмента в БД создана и заполнена таблица "USER";
+- добавлены необходимые зависимости в pom.xml;
+- создана конфигурация подключения к БД в "persistence.xml";
+- создана конфигурация JPA в "JpaConfig.java";
+- внесены изменения в Модель: создаем Интерфейс "UserRepository.java";
+- внесены изменения в Контроллер: добавляем связь с данными в Модели (в БД);
+- внесены изменения в Вид: "user/form.jsp", "user/list.jsp", "index.jsp";
+
+<hr/>
 
 05: 20210311: Model and View
 - создана Модель: класс "User" и тестовые данные;
@@ -37,7 +71,7 @@ JavaEE Tutorial "Timesheet App"<hr/>
 
 03: 20210218: Create Spring MVC Application
 - создан каркас SpringMVC - приложения;
-- настроен локальный контейнер сервлетов Apache Tomcat (далее - веб-сервер);
+- настроен локальный контейнер сервлетов Apache Tomcat (далее — веб-сервер);
 - настроен автоматический деплой веб-приложения из IDE на веб-сервер
   и проверена работа основного раздела веб-приложения
   http://locahost:8080/timesheet;
@@ -50,7 +84,7 @@ JavaEE Tutorial "Timesheet App"<hr/>
 <hr/>
 
 01: 20210128: Create Local Maven Project
-- в IDE с помощью артифакта создан каркас Maven-проекта и подключены базовые зависимости в "pom.xml";
+- в IDE с помощью артефакта создан каркас Maven-проекта и подключены базовые зависимости в "pom.xml";
 <hr/>
 
 00: Базовые системные требования
