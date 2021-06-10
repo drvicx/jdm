@@ -1,4 +1,4 @@
-# jdm
+# jdm_timesheet-mvc-v1
 JavaEE Tutorial "Timesheet App"<hr/>
 
 
